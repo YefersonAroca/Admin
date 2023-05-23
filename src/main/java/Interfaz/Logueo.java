@@ -3,6 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Interfaz;
+import javax.swing.JTable;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.GroupLayout;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JScrollPane;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 /**
  *
@@ -49,6 +57,17 @@ public class Logueo extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+<<<<<<< HEAD
+=======
+        jButton2.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+        		DefaultTableModel modelo = (DefaultTableModel)table.getModel();
+        		modelo.addRow(new Object[]{1,"Administración"});
+        	}
+        });
+        jLabel16 = new javax.swing.JLabel();
+>>>>>>> 4ef27cba8a658a9d91a2d15b2d6d8569fb4ded04
         jLabel17 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
@@ -189,15 +208,21 @@ public class Logueo extends javax.swing.JFrame {
 
         jLabel8.setText("Detalle factura");
 
+<<<<<<< HEAD
         jLabel9.setText("jLabel9");
 
         jRadioButton3.setText("jRadioButton3");
 
         jRadioButton4.setText("jRadioButton4");
+=======
+        jLabel9.setText("Tipo concepto");
+        
+        JScrollPane scrollPane = new JScrollPane();
+>>>>>>> 4ef27cba8a658a9d91a2d15b2d6d8569fb4ded04
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
+<<<<<<< HEAD
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -276,7 +301,119 @@ public class Logueo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(21, 21, 21))
+=======
+        	jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(jPanel2Layout.createSequentialGroup()
+        			.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(jPanel2Layout.createSequentialGroup()
+        					.addGap(186)
+        					.addComponent(jLabel16)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(jLabel7))
+        				.addGroup(jPanel2Layout.createSequentialGroup()
+        					.addGap(167)
+        					.addComponent(jLabel17))
+        				.addGroup(jPanel2Layout.createSequentialGroup()
+        					.addGap(177)
+        					.addComponent(jLabel8))
+        				.addGroup(jPanel2Layout.createSequentialGroup()
+        					.addGap(12)
+        					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(jPanel2Layout.createSequentialGroup()
+        					.addContainerGap()
+        					.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING, false)
+        						.addGroup(jPanel2Layout.createSequentialGroup()
+        							.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        								.addComponent(jLabel18)
+        								.addComponent(jLabel20)
+        								.addComponent(jLabel21)
+        								.addGroup(jPanel2Layout.createSequentialGroup()
+        									.addGap(35)
+        									.addComponent(jLabel9)))
+        							.addGap(30)
+        							.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        								.addGroup(jPanel2Layout.createSequentialGroup()
+        									.addComponent(jTextField3, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
+        									.addGap(37)
+        									.addComponent(jLabel22)
+        									.addGap(18)
+        									.addComponent(jTextField6, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE))
+        								.addComponent(jTextField4, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
+        								.addGroup(jPanel2Layout.createSequentialGroup()
+        									.addComponent(jTextField5, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
+        									.addGap(32)
+        									.addComponent(jLabel19)
+        									.addPreferredGap(ComponentPlacement.RELATED)
+        									.addComponent(jTextField2, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE))
+        								.addComponent(jComboBox1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+        						.addGroup(jPanel2Layout.createSequentialGroup()
+        							.addGap(8)
+        							.addComponent(jLabel15)
+        							.addGap(18)
+        							.addComponent(jTextField1, GroupLayout.PREFERRED_SIZE, 132, GroupLayout.PREFERRED_SIZE)
+        							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        							.addComponent(jButton2)))))
+        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+        jPanel2Layout.setVerticalGroup(
+        	jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(jPanel2Layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(jLabel7, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jLabel16))
+        			.addGap(18)
+        			.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(jTextField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jLabel18)
+        				.addComponent(jLabel19)
+        				.addComponent(jTextField5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(jLabel20)
+        				.addComponent(jTextField4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        			.addGap(10)
+        			.addComponent(jLabel17)
+        			.addGap(3)
+        			.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(jLabel21)
+        				.addComponent(jTextField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jLabel22)
+        				.addComponent(jTextField6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(jLabel8)
+        			.addGap(6)
+        			.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(jComboBox1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jLabel9))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(jLabel15)
+        				.addComponent(jButton2)
+        				.addComponent(jTextField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        			.addGap(18)
+        			.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 128, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+>>>>>>> 4ef27cba8a658a9d91a2d15b2d6d8569fb4ded04
+        );
+        
+        table = new JTable();
+        scrollPane.setViewportView(table);
+        table.setFillsViewportHeight(true);
+        table.setModel(new DefaultTableModel(
+        	new Object[][] {
+        	},
+        	new String[] {
+        		"Item", "Nombre Concepto", "Unidad Medida", "Valor Activo", "Valor Item", "Soporte"
+        	}
+        ));
+        table.getColumnModel().getColumn(0).setPreferredWidth(35);
+        table.getColumnModel().getColumn(1).setPreferredWidth(97);
+        table.getColumnModel().getColumn(2).setPreferredWidth(81);
+        table.getColumnModel().getColumn(3).setPreferredWidth(70);
+        table.getColumnModel().getColumn(4).setPreferredWidth(62);
+        table.getColumnModel().getColumn(5).setPreferredWidth(53);
+        jPanel2.setLayout(jPanel2Layout);
 
         jTabbedPane1.addTab("Ingreso", jPanel2);
 
@@ -386,5 +523,10 @@ public class Logueo extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+<<<<<<< HEAD
     // End of variables declaration//GEN-END:variables
+=======
+    private javax.swing.JTextField jTextField6;
+    private JTable table;
+>>>>>>> 4ef27cba8a658a9d91a2d15b2d6d8569fb4ded04
 }
