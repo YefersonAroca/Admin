@@ -36,13 +36,6 @@ public class Logueo extends javax.swing.JFrame {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -73,56 +66,6 @@ public class Logueo extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setText("Conjunto:");
-
-        jLabel2.setText("nombre");
-
-        jLabel3.setText("Empleado:");
-
-        jLabel4.setText("Nombre");
-
-        jLabel5.setText("Fecha:");
-
-        jLabel6.setText("00/00/0000");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(101, 101, 101)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6))
-                    .addComponent(jLabel4))
-                .addContainerGap(126, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3))
-                .addContainerGap(284, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Inicio", jPanel1);
 
         jLabel7.setText("Detalle factura");
 
@@ -190,38 +133,40 @@ public class Logueo extends javax.swing.JFrame {
         					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
         				.addGroup(jPanel2Layout.createSequentialGroup()
         					.addContainerGap()
-        					.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING, false)
-        						.addGroup(jPanel2Layout.createSequentialGroup()
-        							.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
-        								.addComponent(jLabel18)
-        								.addComponent(jLabel20)
-        								.addComponent(jLabel21)
-        								.addGroup(jPanel2Layout.createSequentialGroup()
-        									.addGap(35)
-        									.addComponent(jLabel9)))
-        							.addGap(30)
-        							.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
-        								.addGroup(jPanel2Layout.createSequentialGroup()
-        									.addComponent(jTextField3, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
-        									.addGap(37)
-        									.addComponent(jLabel22)
-        									.addGap(18)
-        									.addComponent(jTextField6, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE))
-        								.addComponent(jTextField4, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
-        								.addGroup(jPanel2Layout.createSequentialGroup()
-        									.addComponent(jTextField5, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
-        									.addGap(32)
-        									.addComponent(jLabel19)
-        									.addPreferredGap(ComponentPlacement.RELATED)
-        									.addComponent(jTextField2, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE))
-        								.addComponent(jComboBox1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+        					.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
         						.addGroup(jPanel2Layout.createSequentialGroup()
         							.addGap(8)
-        							.addComponent(jLabel15)
-        							.addGap(18)
+        							.addComponent(jLabel15))
+        						.addComponent(jLabel18)
+        						.addComponent(jLabel20)
+        						.addComponent(jLabel21)
+        						.addGroup(jPanel2Layout.createSequentialGroup()
+        							.addGap(35)
+        							.addComponent(jLabel9)))
+        					.addGap(18)
+        					.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING, false)
+        						.addGroup(jPanel2Layout.createSequentialGroup()
         							.addComponent(jTextField1, GroupLayout.PREFERRED_SIZE, 132, GroupLayout.PREFERRED_SIZE)
         							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        							.addComponent(jButton2)))))
+        							.addComponent(jButton2))
+        						.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        							.addGroup(jPanel2Layout.createSequentialGroup()
+        								.addGap(30)
+        								.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        									.addGroup(jPanel2Layout.createSequentialGroup()
+        										.addComponent(jTextField3, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
+        										.addGap(37)
+        										.addComponent(jLabel22)
+        										.addGap(18)
+        										.addComponent(jTextField6, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE))
+        									.addComponent(jTextField4, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
+        									.addGroup(jPanel2Layout.createSequentialGroup()
+        										.addComponent(jTextField5, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
+        										.addGap(32)
+        										.addComponent(jLabel19)
+        										.addPreferredGap(ComponentPlacement.RELATED)
+        										.addComponent(jTextField2, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE))))
+        							.addComponent(jComboBox1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))))
         			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -253,8 +198,8 @@ public class Logueo extends javax.swing.JFrame {
         			.addComponent(jLabel8)
         			.addGap(6)
         			.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(jComboBox1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(jLabel9))
+        				.addComponent(jLabel9)
+        				.addComponent(jComboBox1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
         			.addPreferredGap(ComponentPlacement.RELATED)
         			.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(jLabel15)
@@ -281,6 +226,73 @@ public class Logueo extends javax.swing.JFrame {
         table.getColumnModel().getColumn(3).setPreferredWidth(70);
         table.getColumnModel().getColumn(4).setPreferredWidth(62);
         table.getColumnModel().getColumn(5).setPreferredWidth(53);
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        
+                jLabel1.setText("Conjunto:");
+                
+                        jLabel2.setText("nombre");
+                        
+                                jLabel3.setText("Empleado:");
+                                
+                                        jLabel4.setText("Nombre");
+                                        
+                                                jLabel5.setText("Fecha:");
+                                                
+                                                        jLabel6.setText("00/00/0000");
+                                                        
+                                                                javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+                                                                jPanel1Layout.setHorizontalGroup(
+                                                                	jPanel1Layout.createParallelGroup(Alignment.LEADING)
+                                                                		.addGroup(Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                                			.addContainerGap(24, Short.MAX_VALUE)
+                                                                			.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+                                                                				.addComponent(jLabel2)
+                                                                				.addComponent(jLabel1))
+                                                                			.addPreferredGap(ComponentPlacement.RELATED, 255, Short.MAX_VALUE)
+                                                                			.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
+                                                                				.addComponent(jLabel4)
+                                                                				.addComponent(jLabel3))
+                                                                			.addGap(97))
+                                                                		.addGroup(jPanel1Layout.createSequentialGroup()
+                                                                			.addGap(152)
+                                                                			.addComponent(jLabel5)
+                                                                			.addGap(18)
+                                                                			.addComponent(jLabel6)
+                                                                			.addContainerGap(215, Short.MAX_VALUE))
+                                                                );
+                                                                jPanel1Layout.setVerticalGroup(
+                                                                	jPanel1Layout.createParallelGroup(Alignment.LEADING)
+                                                                		.addGroup(jPanel1Layout.createSequentialGroup()
+                                                                			.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+                                                                				.addGroup(jPanel1Layout.createSequentialGroup()
+                                                                					.addGap(39)
+                                                                					.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+                                                                						.addComponent(jLabel5)
+                                                                						.addComponent(jLabel6)))
+                                                                				.addGroup(Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                                					.addContainerGap(76, Short.MAX_VALUE)
+                                                                					.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
+                                                                						.addComponent(jLabel1)
+                                                                						.addComponent(jLabel3))
+                                                                					.addPreferredGap(ComponentPlacement.RELATED)))
+                                                                			.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+                                                                				.addGroup(jPanel1Layout.createSequentialGroup()
+                                                                					.addGap(42)
+                                                                					.addComponent(jLabel4))
+                                                                				.addGroup(jPanel1Layout.createSequentialGroup()
+                                                                					.addGap(52)
+                                                                					.addComponent(jLabel2)))
+                                                                			.addContainerGap(226, Short.MAX_VALUE))
+                                                                );
+                                                                jPanel1.setLayout(jPanel1Layout);
+                                                                
+                                                                        jTabbedPane1.addTab("Inicio", jPanel1);
         jPanel2.setLayout(jPanel2Layout);
 
         jTabbedPane1.addTab("Ingreso", jPanel2);

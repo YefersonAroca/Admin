@@ -3,7 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Interfaz;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JOptionPane;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
+import Conexionbd.user;
+
+import javax.swing.GroupLayout;
 /**
  *
  * @author yefer
@@ -35,8 +41,6 @@ public class Inicio extends javax.swing.JFrame {
 
         jLabel1.setText("Correo");
 
-        jTextField1.setText("jTextField1");
-
         jLabel2.setText("Bienvenido");
 
         jButton1.setText("Ingreso");
@@ -47,44 +51,55 @@ public class Inicio extends javax.swing.JFrame {
         });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(91, 91, 91)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(115, 115, 115))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(jButton1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        	layout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(Alignment.LEADING, layout.createSequentialGroup()
+        			.addGap(91)
+        			.addComponent(jLabel1)
+        			.addPreferredGap(ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+        			.addComponent(jTextField1, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE)
+        			.addGap(115))
+        		.addGroup(layout.createSequentialGroup()
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(170)
+        					.addComponent(jLabel2))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(150)
+        					.addComponent(jButton1)))
+        			.addContainerGap(172, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel2)
-                .addGap(70, 70, 70)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(49, 49, 49)
-                .addComponent(jButton1)
-                .addContainerGap(92, Short.MAX_VALUE))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addGap(26)
+        			.addComponent(jLabel2)
+        			.addGap(70)
+        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(jTextField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jLabel1))
+        			.addGap(49)
+        			.addComponent(jButton1)
+        			.addContainerGap(92, Short.MAX_VALUE))
         );
+        getContentPane().setLayout(layout);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        
+    	
+    	if (jTextField1.getText().length() != 0   ) {
+    		JOptionPane.showMessageDialog(null,  "correo exito");
+    		String correo = jTextField1.getText();
+    		Conexionbd.user u = new Conexionbd.user();
+    		u.validar(jTextField1);
+    		
+		} else {
+			JOptionPane.showMessageDialog(null,  "Debe ingresar un codigo");
+		}
+    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

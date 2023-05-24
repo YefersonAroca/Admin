@@ -16,7 +16,7 @@ public class Conexion {
     Connection conectar = null;
     String user="postgres";
     String pass="root"; 
-    String bd="Final";
+    String bd="ModeloConjunto";
     String ip="localhost";
     String puerto="5432"; 
     String cadena="jdbc:postgresql://"+ip+":"+puerto+"/"+bd;
