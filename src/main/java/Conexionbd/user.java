@@ -21,7 +21,7 @@ public class user {
 		Conexionbd.Conexion c = new Conexionbd.Conexion();
 		String sql= "SELECT * FROM empleado where codigo = (?);";
 		ps= c.establecerConexion().prepareStatement(sql);
-		ps.setString(1, cod.getText());
+		ps.setString(1, cod.getText().toUpperCase());
 		rs=ps.executeQuery();
 		
 		if (rs.next()) {
