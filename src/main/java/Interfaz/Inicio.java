@@ -13,6 +13,8 @@ import Conexionbd.user;
 import javax.swing.GroupLayout;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import java.awt.Font;
+import java.awt.Color;
 
 /**
  *
@@ -24,6 +26,8 @@ public class Inicio extends javax.swing.JFrame {
 	 * Creates new form Inicio
 	 */
 	public Inicio() {
+		getContentPane().setBackground(new Color(123, 104, 238));
+		getContentPane().setForeground(Color.WHITE);
 		initComponents();
 	}
 
@@ -38,9 +42,12 @@ public class Inicio extends javax.swing.JFrame {
 	private void initComponents() {
 
 		jLabel1 = new javax.swing.JLabel();
+		jLabel1.setFont(new Font("Tw Cen MT Condensed", Font.PLAIN, 17));
 		codigo = new javax.swing.JTextField();
 		jLabel2 = new javax.swing.JLabel();
+		jLabel2.setFont(new Font("Tw Cen MT Condensed", Font.BOLD, 24));
 		jButton1 = new javax.swing.JButton();
+		jButton1.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 15));
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,35 +63,47 @@ public class Inicio extends javax.swing.JFrame {
 		});
 
 		JLabel lblNewLabel = new JLabel("Código");
+		lblNewLabel.setFont(new Font("Tw Cen MT Condensed", Font.PLAIN, 17));
 
 		correo = new JTextField();
 		correo.setColumns(10);
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-		layout.setHorizontalGroup(layout.createParallelGroup(Alignment.LEADING)
+		layout.setHorizontalGroup(
+			layout.createParallelGroup(Alignment.LEADING)
 				.addGroup(layout.createSequentialGroup()
-						.addGroup(layout.createParallelGroup(Alignment.LEADING)
-								.addGroup(layout.createSequentialGroup().addGap(170).addComponent(jLabel2))
-								.addGroup(layout.createSequentialGroup().addGap(150).addComponent(jButton1)))
-						.addContainerGap(172, Short.MAX_VALUE))
-				.addGroup(layout.createSequentialGroup().addGap(91)
-						.addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(lblNewLabel)
-								.addComponent(jLabel1))
-						.addGap(56).addGroup(layout.createParallelGroup(Alignment.LEADING, false).addComponent(codigo)
-								.addComponent(correo, GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE))
-						.addGap(88)));
-		layout.setVerticalGroup(layout.createParallelGroup(Alignment.LEADING)
-				.addGroup(layout.createSequentialGroup().addGap(26).addComponent(jLabel2).addGap(66)
-						.addGroup(layout.createParallelGroup(Alignment.TRAILING)
-								.addGroup(layout.createSequentialGroup().addComponent(jLabel1)
-										.addPreferredGap(ComponentPlacement.UNRELATED).addComponent(lblNewLabel))
-								.addGroup(layout.createSequentialGroup()
-										.addComponent(correo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addComponent(codigo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.PREFERRED_SIZE)))
-						.addGap(24).addComponent(jButton1).addContainerGap(92, Short.MAX_VALUE)));
+					.addGap(129)
+					.addGroup(layout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(jLabel1)
+						.addComponent(lblNewLabel))
+					.addGap(18)
+					.addGroup(layout.createParallelGroup(Alignment.LEADING, false)
+						.addComponent(codigo)
+						.addComponent(correo, GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+						.addComponent(jButton1))
+					.addContainerGap(116, Short.MAX_VALUE))
+				.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
+					.addContainerGap(165, Short.MAX_VALUE)
+					.addComponent(jLabel2)
+					.addGap(162))
+		);
+		layout.setVerticalGroup(
+			layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(layout.createSequentialGroup()
+					.addGap(24)
+					.addComponent(jLabel2)
+					.addGap(73)
+					.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(correo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(jLabel1))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(codigo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblNewLabel))
+					.addGap(56)
+					.addComponent(jButton1)
+					.addContainerGap(60, Short.MAX_VALUE))
+		);
 		getContentPane().setLayout(layout);
 
 		pack();
