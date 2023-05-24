@@ -1,4 +1,4 @@
-package Conexionbd;
+package modelo;
 
 import Conexionbd.Conexion;
 import Interfaz.Logueo;

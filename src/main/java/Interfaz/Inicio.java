@@ -8,7 +8,7 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.JOptionPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-import Conexionbd.user;
+import modelo.user;
 
 import javax.swing.GroupLayout;
 import javax.swing.JLabel;
@@ -113,7 +113,7 @@ public class Inicio extends javax.swing.JFrame {
 
 		if (codigo.getText().length() != 0) {
 			JOptionPane.showMessageDialog(null, "Correo ingresado con éxito");
-			Conexionbd.user u = new Conexionbd.user();
+			modelo.user u = new modelo.user();
 			u.setCodigo(codigo.getText());
 			u.setCorreo(correo.getText());
 			u.setCodempleado(codigo);
