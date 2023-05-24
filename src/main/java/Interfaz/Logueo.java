@@ -10,10 +10,13 @@ import javax.swing.GroupLayout;
 import javax.swing.table.DefaultTableModel;
 
 import Conexionbd.Conexion;
+import Metodos.Metodos_funciones;
+import modelo.Conceptos;
 import modelo.Factura;
 
 import javax.swing.JScrollPane;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 /**
@@ -27,6 +30,7 @@ public class Logueo extends javax.swing.JFrame {
      */
     public Logueo() {
         initComponents();
+        mostrarConceptos();
     }
 
     /**
@@ -418,4 +422,14 @@ public class Logueo extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private JTable table;
+    
+    public void mostrarConceptos() {
+    Metodos_funciones funcion = new Metodos_funciones();
+    ArrayList<Conceptos> lista = funcion.obteneronceptos(); 
+    jComboBox1.addItem("seleccionar");
+    for (int i = 0; i < lista.size(); i++) {
+    	jComboBox1.addItem(lista.get(i).toString());
+	}
+    }
+    
 }

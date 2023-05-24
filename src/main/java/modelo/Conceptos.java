@@ -1,9 +1,9 @@
 package modelo;
 
 public class Conceptos {
-	private String idCategoria;
+	private int idCategoria;
 	private String NombreCategoria;
-	public Conceptos(String idCategoria, String nombreCategoria) {
+	public Conceptos(int idCategoria, String nombreCategoria) {
 		super();
 		this.idCategoria = idCategoria;
 		NombreCategoria = nombreCategoria;
@@ -11,11 +11,11 @@ public class Conceptos {
 	public Conceptos() {
 	
 	}
-	public String getIdCategoria() {
+	public int getIdCategoria() {
 		return idCategoria;
 	}
-	public void setIdCategoria(String idCategoria) {
-		this.idCategoria = idCategoria;
+	public void setIdCategoria(int i) {
+		this.idCategoria = i;
 	}
 	public String getNombreCategoria() {
 		return NombreCategoria;
