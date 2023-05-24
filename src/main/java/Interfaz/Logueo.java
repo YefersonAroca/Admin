@@ -8,6 +8,10 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.GroupLayout;
 import javax.swing.table.DefaultTableModel;
+
+import Conexionbd.Conexion;
+import modelo.Factura;
+
 import javax.swing.JScrollPane;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -43,7 +47,13 @@ public class Logueo extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton2.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		
+        		String name = jTextField1.getText() ;
+        		if (!name.isEmpty()) {
+					modelo.Factura f = new Factura();
+					f.buscarNombre(name);
+				} else {
+
+				}
         		DefaultTableModel modelo = (DefaultTableModel)table.getModel();
         		modelo.addRow(new Object[]{1,"Administración"});
         	}
