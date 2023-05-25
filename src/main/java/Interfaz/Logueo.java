@@ -10,14 +10,18 @@ import javax.swing.GroupLayout;
 import javax.swing.table.DefaultTableModel;
 
 import Conexionbd.Conexion;
+import Metodos.MetodosPersona;
 import Metodos.Metodos_funciones;
 import modelo.Conceptos;
 import modelo.Factura;
+import modelo.Persona;
 
 import javax.swing.JScrollPane;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
 
 /**
  *
@@ -53,13 +57,15 @@ public class Logueo extends javax.swing.JFrame {
         	public void actionPerformed(ActionEvent e) {
         		String name = jTextField1.getText() ;
         		if (!name.isEmpty()) {
-					modelo.Factura f = new Factura();
-					f.buscarNombre(name);
+        			
+					BuscarNombre();
+				
 				} else {
 
 				}
-        		DefaultTableModel modelo = (DefaultTableModel)table.getModel();
-        		modelo.addRow(new Object[]{1,"Administración"});
+        		
+        		//DefaultTableModel modelo = (DefaultTableModel)table.getModel();
+        		//modelo.addRow(new Object[]{1,"Administración"});
         	}
         });
         jLabel16 = new javax.swing.JLabel();
@@ -125,6 +131,31 @@ public class Logueo extends javax.swing.JFrame {
         jLabel9.setText("Tipo concepto");
         
         JScrollPane scrollPane = new JScrollPane();
+        
+        table = new JTable();
+        table.setFillsViewportHeight(true);
+        table.setModel(new DefaultTableModel(
+        	new Object[][] {
+        	},
+        	new String[] {
+        		"Item", "Nombre Concepto", "Unidad Medida", "Valor Activo", "Valor Item", "Soporte"
+        	}
+        ));
+        table.getColumnModel().getColumn(0).setPreferredWidth(35);
+        table.getColumnModel().getColumn(1).setPreferredWidth(97);
+        table.getColumnModel().getColumn(2).setPreferredWidth(81);
+        table.getColumnModel().getColumn(3).setPreferredWidth(70);
+        table.getColumnModel().getColumn(4).setPreferredWidth(62);
+        table.getColumnModel().getColumn(5).setPreferredWidth(53);
+        
+        JLabel lblSeleccioneUnNombre = new JLabel();
+        lblSeleccioneUnNombre.setText("Seleccione un nombre:");
+        
+        persona1 = new JComboBox();
+        persona1.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        	}
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2Layout.setHorizontalGroup(
@@ -143,44 +174,53 @@ public class Logueo extends javax.swing.JFrame {
         					.addGap(177)
         					.addComponent(jLabel8))
         				.addGroup(jPanel2Layout.createSequentialGroup()
-        					.addGap(12)
-        					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-        				.addGroup(jPanel2Layout.createSequentialGroup()
-        					.addContainerGap()
         					.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
         						.addGroup(jPanel2Layout.createSequentialGroup()
-        							.addGap(8)
-        							.addComponent(jLabel15))
-        						.addComponent(jLabel18)
-        						.addComponent(jLabel20)
-        						.addComponent(jLabel21)
+        							.addContainerGap()
+        							.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        								.addComponent(jLabel18)
+        								.addComponent(jLabel20)
+        								.addComponent(jLabel21)))
         						.addGroup(jPanel2Layout.createSequentialGroup()
-        							.addGap(35)
-        							.addComponent(jLabel9)))
-        					.addGap(18)
-        					.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING, false)
+        							.addGap(26)
+        							.addComponent(table, GroupLayout.PREFERRED_SIZE, 450, GroupLayout.PREFERRED_SIZE)))
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
         						.addGroup(jPanel2Layout.createSequentialGroup()
-        							.addComponent(jTextField1, GroupLayout.PREFERRED_SIZE, 132, GroupLayout.PREFERRED_SIZE)
-        							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        							.addComponent(jButton2))
-        						.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
-        							.addGroup(jPanel2Layout.createSequentialGroup()
-        								.addGap(30)
-        								.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
-        									.addGroup(jPanel2Layout.createSequentialGroup()
-        										.addComponent(jTextField3, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
-        										.addGap(37)
-        										.addComponent(jLabel22)
-        										.addGap(18)
-        										.addComponent(jTextField6, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE))
-        									.addComponent(jTextField4, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
-        									.addGroup(jPanel2Layout.createSequentialGroup()
-        										.addComponent(jTextField5, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
-        										.addGap(32)
-        										.addComponent(jLabel19)
-        										.addPreferredGap(ComponentPlacement.RELATED)
-        										.addComponent(jTextField2, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE))))
-        							.addComponent(jComboBox1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))))
+        							.addGap(30)
+        							.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        								.addGroup(jPanel2Layout.createSequentialGroup()
+        									.addComponent(jTextField3, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
+        									.addGap(37)
+        									.addComponent(jLabel22)
+        									.addGap(18)
+        									.addComponent(jTextField6, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE))
+        								.addComponent(jTextField4, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
+        								.addGroup(jPanel2Layout.createSequentialGroup()
+        									.addComponent(jTextField5, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
+        									.addGap(32)
+        									.addComponent(jLabel19)
+        									.addPreferredGap(ComponentPlacement.RELATED)
+        									.addComponent(jTextField2, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE))))
+        						.addGroup(jPanel2Layout.createSequentialGroup()
+        							.addGap(63)
+        							.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        								.addComponent(persona1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        								.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))))
+        				.addGroup(jPanel2Layout.createSequentialGroup()
+        					.addContainerGap()
+        					.addComponent(jLabel15)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(jTextField1, GroupLayout.PREFERRED_SIZE, 132, GroupLayout.PREFERRED_SIZE)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(jButton2)
+        					.addGap(49)
+        					.addComponent(lblSeleccioneUnNombre, GroupLayout.PREFERRED_SIZE, 109, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(jPanel2Layout.createSequentialGroup()
+        					.addContainerGap()
+        					.addComponent(jLabel9)
+        					.addGap(80)
+        					.addComponent(jComboBox1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
         			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -210,36 +250,26 @@ public class Logueo extends javax.swing.JFrame {
         				.addComponent(jTextField6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
         			.addPreferredGap(ComponentPlacement.RELATED)
         			.addComponent(jLabel8)
-        			.addGap(6)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(jTextField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jLabel15)
+        				.addComponent(jButton2)
+        				.addComponent(lblSeleccioneUnNombre)
+        				.addComponent(persona1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
         			.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(jLabel9)
         				.addComponent(jComboBox1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-        			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addGroup(jPanel2Layout.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(jLabel15)
-        				.addComponent(jButton2)
-        				.addComponent(jTextField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-        			.addGap(18)
-        			.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 128, GroupLayout.PREFERRED_SIZE)
-        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        			.addGroup(jPanel2Layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(jPanel2Layout.createSequentialGroup()
+        					.addGap(22)
+        					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 128, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(jPanel2Layout.createSequentialGroup()
+        					.addGap(33)
+        					.addComponent(table, GroupLayout.PREFERRED_SIZE, 101, GroupLayout.PREFERRED_SIZE)))
+        			.addContainerGap(23, Short.MAX_VALUE))
         );
-        
-        table = new JTable();
-        scrollPane.setViewportView(table);
-        table.setFillsViewportHeight(true);
-        table.setModel(new DefaultTableModel(
-        	new Object[][] {
-        	},
-        	new String[] {
-        		"Item", "Nombre Concepto", "Unidad Medida", "Valor Activo", "Valor Item", "Soporte"
-        	}
-        ));
-        table.getColumnModel().getColumn(0).setPreferredWidth(35);
-        table.getColumnModel().getColumn(1).setPreferredWidth(97);
-        table.getColumnModel().getColumn(2).setPreferredWidth(81);
-        table.getColumnModel().getColumn(3).setPreferredWidth(70);
-        table.getColumnModel().getColumn(4).setPreferredWidth(62);
-        table.getColumnModel().getColumn(5).setPreferredWidth(53);
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -422,6 +452,7 @@ public class Logueo extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private JTable table;
+    private JComboBox<String> persona1;
     
     public void mostrarConceptos() {
     Metodos_funciones funcion = new Metodos_funciones();
@@ -429,7 +460,15 @@ public class Logueo extends javax.swing.JFrame {
     jComboBox1.addItem("seleccionar");
     for (int i = 0; i < lista.size(); i++) {
     	jComboBox1.addItem(lista.get(i).toString());
-	}
-    }
+	}}
     
-}
+    public void BuscarNombre() {
+        MetodosPersona funcion = new MetodosPersona();
+        ArrayList<Persona> lista = funcion.buscarPersona( jTextField1.getText()); 
+        persona1.addItem("seleccionar");
+        for (int i = 0; i < lista.size(); i++) {
+        	persona1.addItem(lista.get(i).toString());
+    	
+    
+    }
+}}
