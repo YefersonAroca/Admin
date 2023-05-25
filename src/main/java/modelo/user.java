@@ -1,6 +1,5 @@
 package modelo;
 
-import Conexionbd.Conexion;
 import Interfaz.Logueo;
 
 import java.sql.PreparedStatement;
@@ -8,8 +7,6 @@ import java.sql.ResultSet;
 
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-
-import java.sql.Connection;
 
 public class user {
 
@@ -30,7 +27,7 @@ public class user {
 
 			if (rs.next()) {
 				JOptionPane.showMessageDialog(null, "Ingreso");
-				Logueo l = new Logueo();
+				Logueo l = new Logueo(rs.getString("nombre") + " " + rs.getString("apellido"), rs.getString("codempleado"));
 				l.setVisible(true);
 			} else {
 

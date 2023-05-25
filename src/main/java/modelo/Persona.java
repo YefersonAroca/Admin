@@ -33,7 +33,7 @@ public class Persona {
 		this.nombreperosna = nombreperosna;
 	}
 	public String toString() {
-		return codigoPersona+"-"+nombreperosna;
+		return nombreperosna;
 	}
 	
 	

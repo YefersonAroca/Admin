@@ -25,7 +25,7 @@ public class Conceptos {
 	}
 	@Override
 	public String toString() {
-		return idCategoria+"-"+NombreCategoria;
+		return NombreCategoria;
 	}
 	
 
