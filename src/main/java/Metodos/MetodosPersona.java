@@ -29,18 +29,18 @@ public class MetodosPersona {
 			System.out.print("Concepto");
 			while (rs.next()) {
 				Persona perso=new Persona();
-				perso.setCodigoPersona(rs.getInt("codigo"));
+				perso.setCodigoPersona(rs.getString("codigo"));
 				perso.setNombreperosna(rs.getString("nombrepersona"));
-				
 				lista_persona.add(perso);
 				
-				
+				JOptionPane.showMessageDialog(null, "error" );
 				System.out.print("good person");
 				
 			}
 			
 		} catch (Exception e) {
-			System.out.print("fallo concepto"+e);
+			JOptionPane.showMessageDialog(null, "error" + e.toString());
+	
 		}
 		
 		return lista_persona;

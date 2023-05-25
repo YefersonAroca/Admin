@@ -1,12 +1,12 @@
 package modelo;
 
 public class Persona {
-	private int codigoPersona;
+	private String codigoPersona;
 	private String nombreperosna;
 	
 	
 	
-	public Persona(int codigoPersona, String nombreperosna) {
+	public Persona(String codigoPersona, String nombreperosna) {
 		super();
 		this.codigoPersona = codigoPersona;
 		this.nombreperosna = nombreperosna;
@@ -20,11 +20,11 @@ public class Persona {
 
 
 
-	public int getCodigoPersona() {
+	public String getCodigoPersona() {
 		return codigoPersona;
 	}
-	public void setCodigoPersona(int i) {
-		this.codigoPersona = i;
+	public void setCodigoPersona(String string) {
+		this.codigoPersona = string;
 	}
 	public String getNombreperosna() {
 		return nombreperosna;
